@@ -1,4 +1,6 @@
 import React from "react";
+import {changeColor} from '../../functions/';
+import {changeLabelColor} from "../../functions";
 
 export interface ButtonProps {
   label: string;
