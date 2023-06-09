@@ -13,23 +13,30 @@ export function changeLabelColor(
     const labelB = Number(labelRgbArr[4]);
     const rgbNew = labelColor;
     const luminosityBackground = (0.299*r + 0.587*g + 0.114*b);
+    console.log(luminosityBackground);
     const luminosityLabel = (0.299*labelR + 0.587*labelG + 0.114*labelB);
+    console.log(luminosityLabel)
     const contrastRatio = Math.max(luminosityBackground, luminosityLabel)
         / Math.min(luminosityBackground, luminosityLabel);
+    console.log(contrastRatio);
     if (contrastRatio < 4.5) {
         if (type === 'red') {
             const newR = labelR * 4.5/contrastRatio;
+            console.log('rgb('+`${newR},${g},${b}`+')');
             return 'rgb('+`${newR},${labelG},${labelB}`+')';
         } else if (type === 'green') {
             const newG = labelG * 4.5/contrastRatio;
+            console.log('rgb('+`${r},${newG},${b}`+')');
             return 'rgb('+`${labelR},${newG},${labelB}`+')';
         } else if (type === 'blue') {
             const newB = labelB * 4.5/contrastRatio;
+            console.log('rgb('+`${r},${g},${newB}`+')');
             return 'rgb('+`${labelR},${labelG},${newB}`+')';
         } else if (type === 'noColor') {
             const newR = labelR * 4.5/contrastRatio;
             const newG = labelG * 4.5/contrastRatio;
             const newB = labelB * 4.5/contrastRatio;
+            console.log('rgb('+`${newR},${newG},${newB}`+')');
             return 'rgb('+`${newR},${newG},${newB}`+')';
         } else {
             return rgbNew;
