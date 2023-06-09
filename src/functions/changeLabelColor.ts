@@ -1,4 +1,4 @@
-function changeLabelColor(
+export function changeLabelColor(
     rgbColor: string,
     labelColor: string,
     type: 'red' | 'green' | 'blue' | 'noColor' | 'basic',

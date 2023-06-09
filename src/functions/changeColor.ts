@@ -1,4 +1,4 @@
-function changeColor(
+export function changeColor(
     rgbColor: string,
     type: 'red' | 'green' | 'blue' | 'noColor' | 'basic',
     intensity: number,
